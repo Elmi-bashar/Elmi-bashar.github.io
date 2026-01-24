@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Stylesheet-->
+    <link rel="stylesheet" href="styles.css">
+    <title>Quiz</title>
+    <style>
+                @keyframes fadeColor {
+    0% { background-color: orange; }
+    50% { background-color: red; }
+    100% { background-color: orange; }
+                }
+        body {
+            font-family: Arial, sans-serif;
+            animation: fadeColor 4s infinite; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .quiz-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center; /* Ensures all child elements are centered */
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto; /* Centers the container itself */
+        }
+
+        .scoreboard {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            padding: 10px;
+            color: black;
+            border-radius: 5px;
+            z-index: 1000; /* Ensures it stays on top */
+        }
+
+        #question-number {
+            font-size: 20px;
+        }
+      
+
+        .intro-container, .quiz-container {
+            display: none;
+            text-align: center;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        .arrow-button:active {
+            transform: scale(0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .mood-bar-container {
+            width: 100%;
+            background-color: #ddd;
+            margin-top: 10px;
+        }
+
+        .mood-bar {
+            width: 10%;
+            height: 5px;
+            background-color: darkred;
+        }
+        .fail-container{
+            border-radius: 15px;
+           
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="intro-container fail-container visible" style="background-color: white;
+    margin: 20px;box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
+      
+        
+        <img src="assets/sad_elk.png" alt="Mikko is sad"/>
+        <div style="width: 260px;margin:auto ;margin-top: -0px;" class="mood-bar-container">
+            <div id="mood-bar" class="mood-bar"></div>
+        </div>
+        <h1 style="color: #000;">Mikko is sad</h1>
+        <p style="margin: 10px;">You answered too many questions wrong. Now Mikko is to sad to continue</p>
+       <!-- <button id="restart-btn " onclick="restartQuiz()">restart</button>-->
+        <button style="background-color: orange;border-radius: 10px; margin:5px;" id="restart-btn btn btn-primary btn2" onclick="restartQuiz()">Back to the Map</button>
+    </div>
+
+   
+        
+ 
+  
+</body>
+</html>
+<script>
+
+    function restartQuiz() {
+        window.location.href = "map.html";
+    }
+
+</script>
